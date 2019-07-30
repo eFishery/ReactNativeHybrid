@@ -1,0 +1,17 @@
+{
+  "name": "MyReactNativeApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "bundling" : "node ./script/bundling.js"
+  },
+  "dependencies": {
+    "moment": "^2.24.0",
+    "react": "16.6.3",
+    "react-native": "0.58.6"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.3"
+  }
+}

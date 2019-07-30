@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+    defaultConfig {
+        applicationId "com.example.reacttest"
+        minSdkVersion 18
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation coreDependencies.values()
+    implementation roomDependencies.values()
+    implementation reactNativeDependencies.values()
+
+    kapt kaptDependencies.values()
+
+    testImplementation testDependencies.values()
+    androidTestImplementation androidTestDependecies.values()
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    compileOnly 'javax.inject:javax.inject:1'
+}

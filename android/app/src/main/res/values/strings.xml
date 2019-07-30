@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">React Test</string>
+    <string name="react_one">React One</string>
+    <string name="react_two">React Two</string>
+</resources>
